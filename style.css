@@ -162,7 +162,7 @@ h3 {
   align-items: center;
   font-family: "Lobster", sans-serif;
   color: white;
-  font-size: 16px;
+  font-size: max(5vw, 50px);
   padding: 20px;
   margin: 30px 0;
   min-height: 75vh;
@@ -173,8 +173,13 @@ h3 {
   transition: all 1s ease-out;
 }
 
-.start-text.in-view {
-  font-size: max(5vw, 50px);
+.start-text.text {
+  scale: 0.2;
+  opacity: 0;
+}
+
+.start-text.in-view.text {
+  scale: 1;
   opacity: 1;
 }
 
@@ -259,6 +264,10 @@ h3 {
 
 .flip-container:hover .flip-inner-container {
   transform: rotateY(180deg);
+}
+
+.flip-container:not(:hover) .flip-inner-container {
+  transition: transform 0.3s;
 }
 
 .flip-front,

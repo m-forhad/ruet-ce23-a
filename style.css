@@ -166,18 +166,18 @@ h3 {
   border-top: 4px solid skyblue;
   border-bottom: 4px solid skyblue;
   animation: shadow 4s linear infinite;
-  transition: all 1s ease-out;
 }
 
-.start-text.text {
+.start-text .text {
   font-family: "Lobster", sans-serif;
   color: white;
   font-size: max(5vw, 50px);
   scale: 0.2;
-  opacity: 0;
+  opacity: 1;
+  transition: all 1s ease-out;
 }
 
-.start-text.in-view.text {
+.start-text.in-view .text {
   scale: 1;
   opacity: 1;
 }

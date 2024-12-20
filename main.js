@@ -17,4 +17,21 @@
     targets.forEach(target => observer.observe(target));
     const targettxt = document.getElementById('start-text');
     observer.observe(targettxt);
+
+    const toggle = document.getElementById('toggle')
+    check();
+
+    function check() {
+      if (toggle.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark')
+      }
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark')
+      } else {
+        document.documentElement.removeAttribute('data-theme')
+      }
+    });
   });

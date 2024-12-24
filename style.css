@@ -125,7 +125,7 @@ a {
   width: 100%;
   margin: -40px 0 0 0;
   text-align: center;
-  background: url(./src/bg/main_gate.jpg) no-repeat fixed center;
+  background: url(./assets/bg/main_gate.jpg) no-repeat fixed center;
   background-size: cover;
   overflow-x: hidden;
   animation: changeBG 12s ease-in 1.5s infinite;
@@ -133,31 +133,31 @@ a {
 
 @keyframes changeBG {
    0% {
-    background-image: url(./src/bg/main_gate.jpg);
+    background-image: url(./assets/bg/main_gate.jpg);
   }
 
   30% {
-    background-image: url(./src/bg/main_gate.jpg);
+    background-image: url(./assets/bg/main_gate.jpg);
   }
 
   33% {
-    background-image: url(./src/bg/dept_building.png);
+    background-image: url(./assets/bg/dept_building.png);
   }
 
   63% {
-    background-image: url(./src/bg/dept_building.png);
+    background-image: url(./assets/bg/dept_building.png);
   }
 
   66% {
-    background-image: url(./src/bg/group_photo.png);
+    background-image: url(./assets/bg/group_photo.png);
   }
 
   97% {
-    background-image: url(./src/bg/group_photo.png);
+    background-image: url(./assets/bg/group_photo.png);
   }
 
   100% {
-    background-image: url(./src/bg/main_gate.jpg);
+    background-image: url(./assets/bg/main_gate.jpg);
   }
 }
 
@@ -583,7 +583,7 @@ a {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   box-shadow: 0 0px 15px #2020203d;
-  background: white url('./src/bg/moon.png') no-repeat center;
+  background: white url('./assets/bg/moon.png') no-repeat center;
   background-size: cover;
 }
 
@@ -599,7 +599,7 @@ input:checked + .slider:before {
   -webkit-transform: translateX(80%);
   -ms-transform: translateX(80%);
   transform: translateX(80%);
-  background: white url('./src/bg/sun.png') no-repeat center;
+  background: white url('./assets/bg/sun.png') no-repeat center;
   background-size: cover;
 }
 

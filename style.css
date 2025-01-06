@@ -108,8 +108,8 @@ a {
 
 .logo img {
   position: relative;
-  width: max(10vw, 100px);
-  max-width: 100px;
+  width: clamp(90px, 10vw, 110px);
+  max-width: 110px;
   height: auto;
   z-index: 3;
 }
@@ -117,7 +117,7 @@ a {
 .department-name {
   font-family: 'Lilita One', cursive;
   color: var(--text-color);
-  font-size: clamp(20px, 4vw, 32px);
+  font-size: clamp(1.25rem, 4vw, 2rem);
   z-index: 3;
 }
 
@@ -164,7 +164,9 @@ a {
 .welcome-bg {
   width: 100%;
   min-height: 75vh;
+  min-height: 75dvh;
   margin-top: 100vh;
+  margin-top: 100dvh;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
 }
@@ -179,15 +181,15 @@ a {
 }
 
 .welcome-container h1 {
-  font-size: max(12vw, 5em);
+  font-size: max(12vw, 5rem);
 }
 
 .welcome-container h2 {
-  font-size: max(8vw, 3em);
+  font-size: max(8vw, 3rem);
 }
 
 .welcome-container h3 {
-  font-size: max(6vw, 3em);
+  font-size: max(6vw, 3rem);
 }
 
 .start-text {
@@ -197,6 +199,7 @@ a {
   padding: 20px;
   margin: 30px 0;
   min-height: 75vh;
+  min-height: 75dvh;
   border-top: 4px solid var(--border-color);
   border-bottom: 4px solid var(--border-color);
   animation: shadow 4s linear infinite;
@@ -205,7 +208,7 @@ a {
 .start-text .text {
   font-family: "Lobster", sans-serif;
   color: var(--secondary-text-color);
-  font-size: max(5vw, 50px);
+  font-size: max(5vw, 3.125rem);
   scale: 0.2;
   opacity: 1;
   transition: all 1s ease-out;
@@ -249,7 +252,7 @@ a {
   background: linear-gradient(45deg, var(--bright-bg-color), var(--bright-bg-color)); 
   font-family: 'Sour Gummy', cursive;
   color: var(--text-color);
-  font-size: 32px;
+  font-size: 2rem;
   text-align: center;
   clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
   text-shadow: 6px 5px 8px var(--btn-color);
@@ -322,6 +325,8 @@ a {
 .flip-front img {
   width: 80%;
   height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 50%;
   margin: auto;
   margin-top: 20px;
@@ -329,14 +334,14 @@ a {
 
 .flip-front h3 {
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-family: 'Itim', cursive;
 }
 
 .flip-front h3:nth-child(3) {
   font-weight: 400;
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .flip-back {
@@ -346,6 +351,8 @@ a {
 .flip-back img {
   width: 60%;
   height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 5px;
   margin: auto;
   margin-top: 10px;
@@ -369,7 +376,7 @@ a {
 .flip-back .social-icons a {
   margin-right: 10px;
   color: var(--text-color);
-  font-size: 30px;
+  font-size: 2rem;
   padding: 10px;
   height: 50px;
   width: 50px;

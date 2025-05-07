@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const headers = {
-    "Access-Control-Allow-Origin": "*", // or replace * with your site domain
+    "Access-Control-Allow-Origin": "https://ruet-ce-23-a.netlify.app", // or replace * with your site domain
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
   };

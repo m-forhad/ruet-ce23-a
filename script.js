@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         PhotoBase64: base64String
       };
 
-      const res = await fetch("YOUR_APPS_SCRIPT_WEB_APP_URL", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbzlIB0EyjSGFjtZ3Cr36qk050pBkmx5AOfG6ttx89I35_BnIFdxNG3Wz2bOYKjIugjuqw/exec", {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" }

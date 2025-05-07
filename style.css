@@ -615,3 +615,10 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+input, button {
+  margin: 5px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+}

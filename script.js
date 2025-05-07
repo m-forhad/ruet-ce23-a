@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         PhotoBase64: base64String
       };
 
-      const res = await fetch("https://script.google.com/macros/s/AKfycbzlIB0EyjSGFjtZ3Cr36qk050pBkmx5AOfG6ttx89I35_BnIFdxNG3Wz2bOYKjIugjuqw/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbwZPS6shvqDxthengsAC9-KuOMHxRI6Y1sTldhHD78YFJlgbRp5aG_z4a8h0cS7aoMg/exec", {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" }

@@ -5,15 +5,6 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
-  <style>
-    #photoUrlPreview { width: 200px;
-                     height: 200px;
-                     border: 2px solid black;}
-    input {
-      width: 50%;
-      align: center;
-    }
-  </style>
 </head>
 <body>
   <div id="login-section">
@@ -26,16 +17,16 @@
 
   <div id="form-section" style="display: none;">
     <form id="student-form">
-      <input type="text" name="Name" id="Name" placeholder="Name"><br>
-      <input type="text" name="Roll" id="Roll" placeholder="Roll"><br>
-      <input type="text" name="School" id="School" placeholder="School"><br>
-      <input type="text" name="College" id="College" placeholder="College"><br>
-      <input type="text" name="Hometown" id="Hometown" placeholder="Hometown"><br>
-      <input type="text" name="Facebook" id="Facebook" placeholder="Facebook"><br>
-      <input type="text" name="Instagram" id="Instagram" placeholder="Instagram"><br>
-      <input type="text" name="WhatsApp" id="Whatsapp" placeholder="WhatsApp"><br>
+      <input type="text" name="Name" placeholder="Name"><br>
+      <input type="text" name="Roll" placeholder="Roll"><br>
+      <input type="text" name="School" placeholder="School"><br>
+      <input type="text" name="College" placeholder="College"><br>
+      <input type="text" name="Hometown" placeholder="Hometown"><br>
+      <input type="text" name="Facebook" placeholder="Facebook"><br>
+      <input type="text" name="Instagram"  placeholder="Instagram"><br>
+      <input type="text" name="WhatsApp" placeholder="WhatsApp"><br>
       <input type="file" name="Photo" id="photo" onchange="handlePhotoUpload(event)" /></br>
-      <img id="photoUrlPreview" />
+      <img id="photoUrlPreview" /></br>
       <input type="hidden" id="userEmail" />
       <button type="submit" >Submit</button>
     </form>

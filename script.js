@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("student-form");
 
   form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    //e.preventDefault();
 
     document.getElementById('loader').style.width = '100%';
     
@@ -64,9 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (res.ok) {
-        alert("Your data submited Successfully !");
-        //form.reset();
-        //document.getElementById('loader').style.width = '0%';
+        window.location.href = "index.html";
       } else {
         alert("Error submitting.");
       }

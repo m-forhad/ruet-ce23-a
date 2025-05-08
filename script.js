@@ -61,9 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "text/plain;charset=utf-8" }
       });
 
+      document.getElementById('loader').style.width = '100%';
+
       if (res.ok) {
         alert("Your data submited Successfully !");
-        form.reset();
+        //form.reset();
+        document.getElementById('loader').style.width = '0%';
       } else {
         alert("Error submitting.");
       }

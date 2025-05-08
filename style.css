@@ -673,6 +673,11 @@ input:checked + .slider:before {
 	align-items: center;
 }
 
+#photoUrlPreview {
+  width: 150px;
+  height: 150px;
+}
+
 input, button {
   margin: 5px;
   padding: 5px;

@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (res.ok) {
-        window.location.href = "https://ruet-ce-23-a.netlify.app/";
+        alert("Data submitted successfully!");
       } else {
         alert("Error submitting.");
       }

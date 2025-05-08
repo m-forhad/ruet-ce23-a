@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    document.getElementById('loader').style.width = '100%';
+    
     const formData = new FormData(form);
     const file = formData.get("Photo");
 
@@ -61,12 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "text/plain;charset=utf-8" }
       });
 
-      document.getElementById('loader').style.width = '100%';
-
       if (res.ok) {
         alert("Your data submited Successfully !");
         //form.reset();
-        document.getElementById('loader').style.width = '0%';
+        //document.getElementById('loader').style.width = '0%';
       } else {
         alert("Error submitting.");
       }

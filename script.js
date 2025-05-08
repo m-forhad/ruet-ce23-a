@@ -67,8 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //if (res.ok) {
       if (text.includes("Success")){
-        //alert("Data submitted successfully!");
-        window.location.replace = "https://ruet-ce-23-a.netlify.app";
+        alert("Data submitted successfully!");
+        document.getElementById('loader').style.width = '0%';
+        //window.location.replace = "https://ruet-ce-23-a.netlify.app";
       } else {
         alert("Error submitting.");
       }

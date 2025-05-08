@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("student-form");
 
   form?.addEventListener("submit", async (e) => {
-    //e.preventDefault();
+    e.preventDefault();
 
     document.getElementById('loader').style.width = '100%';
     

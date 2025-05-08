@@ -1,59 +1,78 @@
+let studentEmail = "";
+
 function handleCredentialResponse(response) {
-  const idToken = response.credential;
+  const data = jwt_decode(response.credential);
+  studentEmail = data.email;
 
-  // Decode the JWT to extract user info
-  const payload = JSON.parse(atob(idToken.split('.')[1]));
-  const email = payload.email;
+  document.getElementById('form-section').style.display = 'block';
+  document.getElementById('login-section').style.display = 'none';
 
-  document.getElementById("userEmail").value = email;
-
-  // Call the backend to get existing data for this user
-  fetch(`https://script.google.com/macros/s/AKfycbz_ZQYWBch81acPqa5yf0RkpMwJO8IZDyDb3pGNbamlmnewUGSohUnruaNXJa9U1keaPg/exec?email=${email}`)
+  // Fetch existing data
+  fetch(`https://script.google.com/macros/s/AKfycbz_ZQYWBch81acPqa5yf0RkpMwJO8IZDyDb3pGNbamlmnewUGSohUnruaNXJa9U1keaPg/exec?email=${encodeURIComponent(studentEmail)}`)
     .then(res => res.json())
     .then(data => {
-      if (data.Name) {
-        document.getElementById("Name").value = data.Name;
-        document.getElementById("Roll").value = data.Roll;
-        document.getElementById("School").value = data.School;
-        document.getElementById("College").value = data.College;
-        document.getElementById("Hometown").value = data.Hometown;
-        document.getElementById("Facebook").value = data.Facebook;
-        document.getElementById("Instagram").value = data.Instagram;
-        document.getElementById("Whatsapp").value = data.WhatsApp;
-        document.getElementById("photoUrlPreview").src = data.PhotoURL;
+      if (data?.Name) {
+        document.querySelector('[name="Name"]').value = data.Name;
+        document.querySelector('[name="Roll"]').value = data.Roll;
+        document.querySelector('[name="School"]').value = data.School;
+        document.querySelector('[name="College"]').value = data.College;
+        document.querySelector('[name="Hometown"]').value = data.Hometown;
+        document.querySelector('[name="Facebook"]').value = data.Facebook;
+        document.querySelector('[name="Instagram"]').value = data.Instagram;
+        document.querySelector('[name="WhatsApp"]').value = data.WhatsApp;
       }
     })
-    .catch(err => console.error("Error fetching user data:", err));
+    .catch(err => {
+      console.error("Fetch error:", err);
+    });
 }
 
 // Submit form handler
-function submitForm() {
-  const email = document.getElementById("userEmail").value;
-  const formData = {
-    Email: email,
-    Name: document.getElementById("Name").value,
-    Roll: document.getElementById("Roll").value,
-    School: document.getElementById("School").value,
-    College: document.getElementById("College").value,
-    Hometown: document.getElementById("Hometown").value,
-    Facebook: document.getElementById("Facebook").value,
-    Instagram: document.getElementById("Instagram").value,
-    WhatsApp: document.getElementById("Whatsapp").value,
-    PhotoBase64: base64Photo // set elsewhere during upload
-  };
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("student-form");
 
-  fetch("https://script.google.com/macros/s/AKfycbz_ZQYWBch81acPqa5yf0RkpMwJO8IZDyDb3pGNbamlmnewUGSohUnruaNXJa9U1keaPg/exec", {
-    redirect: "follow",
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify(formData)
-  })
-    .then(res => res.json())
-    .then(data => alert("Data submitted successfully!"))
-    .catch(err => alert("Error submitting data:" + err));
-}
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const file = formData.get("Photo");
+
+    const reader = new FileReader();
+    reader.onload = async function () {
+      const base64String = reader.result.split(',')[1];
+
+      const payload = {
+        Email: studentEmail,
+        Name: formData.get("Name"),
+        Roll: formData.get("Roll"),
+        School: formData.get("School"),
+        College: formData.get("College"),
+        Hometown: formData.get("Hometown"),
+        Facebook: formData.get("Facebook"),
+        Instagram: formData.get("Instagram"),
+        WhatsApp: formData.get("WhatsApp"),
+        PhotoBase64: base64String
+      };
+
+      const res = await fetch("https://script.google.com/macros/s/AKfycbz_ZQYWBch81acPqa5yf0RkpMwJO8IZDyDb3pGNbamlmnewUGSohUnruaNXJa9U1keaPg/exec", {
+        redirect: "follow",
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: { "Content-Type": "text/plain;charset=utf-8" }
+      });
+
+      if (res.ok) {
+        alert("Success!");
+        form.reset();
+      } else {
+        alert("Error submitting.");
+      }
+    };
+
+    reader.readAsDataURL(file);
+  });
+});
+
 
 // Convert uploaded file to base64
 let base64Photo = "";

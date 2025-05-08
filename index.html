@@ -138,7 +138,7 @@
 	</div>
 
 	<script>
-		const scriptURL = "https://script.google.com/macros/s/AKfycbyWJMK885lFhJgvi1QNovcksSful6pdC-I319Q9iL0-_ruOa8V19vSe0hM-WLmjAKCR/exec?mode=all";
+		const scriptURL = "https://script.google.com/macros/s/AKfycby2zdpC2brbYFdj9ef4lf7gzZfxLnFJXyVhRvsH1wrwZ8PeSTn9aTNeAEvtoDrtOpGCzg/exec?mode=all";
 
 		let allStudents = [];
 
@@ -191,7 +191,7 @@
 		document.getElementById("search").addEventListener("input", e => {
 			const query = e.target.value.toLowerCase();
 			const filtered = allStudents.filter(s =>
-				Object.values(s).some(v => v.toLowerCase().includes(query))
+			[s.Name, s.Roll, s.School, s.College, s.Hometown].some(v => v.toLowerCase().includes(query))
 			);
 			renderCards(filtered);
 		});

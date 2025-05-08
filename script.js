@@ -35,9 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       const res = await fetch("/.netlify/functions/submit-to-sheet", {
+        redirect: "follow",
         method: "POST",
         body: JSON.stringify(payload),
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "text/plain;charset=utf-8" }
       });
 
       if (res.ok) {

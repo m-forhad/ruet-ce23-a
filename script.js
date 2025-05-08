@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (res.ok) {
-        alert("Success!");
+        alert("Your data submited Successfully !");
         form.reset();
       } else {
         alert("Error submitting.");

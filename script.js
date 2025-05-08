@@ -8,7 +8,7 @@ function handleCredentialResponse(response) {
   document.getElementById('login-section').style.display = 'none';
 
   // Fetch existing data
-  fetch(`https://script.google.com/macros/s/AKfycbxhY-UqponXfh63X9bc3gjeYhB6CZyvVQyqDswuKYJysOt2akGYD9alt2B3ake8NFuehA/exec?email=${encodeURIComponent(studentEmail)}`)
+  fetch(`https://script.google.com/macros/s/AKfycbyYiuZv0DIi8dOIdAJfQMBKzQS0xY9GV7_8dMFyBoMm-OIyZkqvE0SGYMWTSZ6yUJRvlA/exec?email=${encodeURIComponent(studentEmail)}`)
     .then(res => res.json())
     .then(data => {
       if (data?.Name) {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         PhotoBase64: base64String
       };
 
-      const res = await fetch("https://script.google.com/macros/s/AKfycbxhY-UqponXfh63X9bc3gjeYhB6CZyvVQyqDswuKYJysOt2akGYD9alt2B3ake8NFuehA/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbyYiuZv0DIi8dOIdAJfQMBKzQS0xY9GV7_8dMFyBoMm-OIyZkqvE0SGYMWTSZ6yUJRvlA/exec", {
         redirect: "follow",
         method: "POST",
         body: JSON.stringify(payload),
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (res.ok) {
-        window.location.href = "index.html";
+        window.location.href = "https://ruet-ce-23-a.netlify.app/";
       } else {
         alert("Error submitting.");
       }

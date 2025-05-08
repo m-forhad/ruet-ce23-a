@@ -1,7 +1,10 @@
-// This function is called after Google Sign-In
-function onSignIn(googleUser) {
-  const profile = googleUser.getBasicProfile();
-  const email = profile.getEmail();
+function handleCredentialResponse(response) {
+  const idToken = response.credential;
+
+  // Decode the JWT to extract user info
+  const payload = JSON.parse(atob(idToken.split('.')[1]));
+  const email = payload.email;
+
   document.getElementById("userEmail").value = email;
 
   // Call the backend to get existing data for this user

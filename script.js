@@ -8,7 +8,7 @@ function handleCredentialResponse(response) {
   document.getElementById('login-section').style.display = 'none';
 
   // Fetch existing data
-  fetch(`https://script.google.com/macros/s/AKfycby2zdpC2brbYFdj9ef4lf7gzZfxLnFJXyVhRvsH1wrwZ8PeSTn9aTNeAEvtoDrtOpGCzg/exec?email=${encodeURIComponent(studentEmail)}`)
+  fetch(`https://script.google.com/macros/s/AKfycbztdLBLZuf-rCCKecf031FoEiWXAsY8Iv379dJfhkk_W9r1XK57HWLLKw5AFTxArWv97w/exec?email=${encodeURIComponent(studentEmail)}`)
     .then(res => res.json())
     .then(data => {
       if (data?.Name) {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         PhotoBase64: base64String
       };
 
-      const res = await fetch("https://script.google.com/macros/s/AKfycby2zdpC2brbYFdj9ef4lf7gzZfxLnFJXyVhRvsH1wrwZ8PeSTn9aTNeAEvtoDrtOpGCzg/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbztdLBLZuf-rCCKecf031FoEiWXAsY8Iv379dJfhkk_W9r1XK57HWLLKw5AFTxArWv97w/exec", {
         redirect: "follow",
         method: "POST",
         body: JSON.stringify(payload),

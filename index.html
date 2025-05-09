@@ -133,7 +133,9 @@
 
 	<!-- List -->
 	<div class="heading">The Family</div>
-	<input type="text" id="search" placeholder="Search by name, roll, school, etc..." />
+	<div class="search-bar">
+		<input type="text" id="search" placeholder="Search by name, roll, school, etc..." />
+	</div>
 	<div id="list-container" class="list-container">
 	</div>
 
@@ -203,7 +205,7 @@
 
 			console.log(filtered);
 			renderCards(filtered);
-			
+
 		});
 
 		fetchStudents();

@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     document.getElementById('loader').style.width = '100%';
-    console.log(loading);
+    console.log("loading");
     
     const formData = new FormData(form);
     const file = formData.get("Photo");
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       //if (res.ok) {
       if (text.includes("Success")){
         alert("Data submitted successfully!");
-        console.log(submited);
+        console.log("submited");
         //document.getElementById('loader').style.width = '0%';
         //window.location.replace = "https://ruet-ce-23-a.netlify.app";
       } else {

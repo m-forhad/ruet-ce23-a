@@ -66,10 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const text = await res.text();
 
-      //if (res.ok) {
-      if (text.includes("Success")){
-        alert("Data submitted successfully!");
+      if (res.ok) {
         console.log("submited");
+        alert("Data submitted successfully!");
         //document.getElementById('loader').style.width = '0%';
         //window.location.replace = "https://ruet-ce-23-a.netlify.app";
       } else {

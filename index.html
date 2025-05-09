@@ -194,7 +194,7 @@
 			const filtered = allStudents.filter(s => {
 				return (
 					(s.Name && s.Name.toLowerCase().includes(query)) ||
-					(s.Roll && s.Roll.toLowerCase().includes(query)) ||
+					(s.Roll.includes(query)) ||
 					(s.School && s.School.toLowerCase().includes(query)) ||
 					(s.College && s.College.toLowerCase().includes(query)) ||
 					(s.Hometown && s.Hometown.toLowerCase().includes(query))

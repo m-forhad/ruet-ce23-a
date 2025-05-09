@@ -64,13 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "text/plain;charset=utf-8" }
       });
 
-      const text = await res.text();
-
       if (res.ok) {
         console.log("submited");
-        alert("Data submitted successfully!");
-        //document.getElementById('loader').style.width = '0%';
-        //window.location.replace = "https://ruet-ce-23-a.netlify.app";
+        //alert("Data submitted successfully!");
+        window.location.replace("https://ruet-ce-23-a.netlify.app");
       } else {
         alert("Error submitting.");
       }

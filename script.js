@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    document.getElementById('loader').style.width = '100%';
+    document.getElementById('form-loader').style.left = '0';
     console.log("loading");
     
     const formData = new FormData(form);

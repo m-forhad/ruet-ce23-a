@@ -21,6 +21,12 @@
 </head>
 
 <body>
+
+	<!-- Loader screen -->
+	 <div class="card-loader" id="card-loader">
+		<div class="loader"></div>
+	 </div>
+
 	<!-- dark mode toggle -->
 	<div class="toggler">
 		<label id="switch" class="switch">
@@ -75,7 +81,7 @@
 	</div>
 
 	<!-- CR List -->
-	<div class="heading" id="heading">The Class Representetive</div>
+	<div class="heading" id="heading">The Class Representatives</div>
 
 	<div class="cr-list-container">
 
@@ -147,6 +153,7 @@
 		async function fetchStudents() {
 			const res = await fetch(scriptURL);
 			const data = await res.json();
+			document.getElementById('card-loader').style.display = "flex";
 			allStudents = data.sort((a, b) => {
 				const rollA = parseInt(a.Roll);
 				const rollB = parseInt(b.Roll);
@@ -158,6 +165,7 @@
 		function renderCards(list) {
 			const container = document.getElementById("list-container");
 			container.innerHTML = "";
+			document.getElementById('card-loader').style.display = "none";
 
 			list.forEach(student => {
 				const card = document.createElement("div");

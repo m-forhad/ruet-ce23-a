@@ -4,6 +4,7 @@ function handleCredentialResponse(response) {
   const data = jwt_decode(response.credential);
   studentEmail = data.email;
 
+  document.getElementById('form-loader').style.left = '0';
   document.getElementById('form-section').style.display = 'block';
   document.getElementById('login-section').style.display = 'none';
 
@@ -22,8 +23,15 @@ function handleCredentialResponse(response) {
         document.querySelector('[name="WhatsApp"]').value = data.WhatsApp;
       }
     })
+
+    .finally(() => {
+      // Hide loader, show form once ready
+      document.getElementById('form-loader').style.left = '-110vw';
+    })
+
     .catch(err => {
       console.error("Fetch error:", err);
+      document.getElementById('form-loader').textContent = "Error loading data.";
     });
 }
 

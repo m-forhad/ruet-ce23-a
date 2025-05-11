@@ -23,9 +23,9 @@
 <body>
 
 	<!-- Loader screen -->
-	 <div class="card-loader" id="card-loader">
+	<div class="card-loader" id="card-loader">
 		<div class="loader"></div>
-	 </div>
+	</div>
 
 	<!-- dark mode toggle -->
 	<div class="toggler">
@@ -100,8 +100,10 @@
 						<span><i class="fa fa-building-columns"></i> Rajshahi College </span>
 					</div>
 					<div class="social-icons">
-						<a href="https://www.facebook.com/share/16Hgy72U58/?mibextid=wwXIfr"><i class="fa fa-facebook"></i></a>
-						<a href="https://www.instagram.com/ridwanul_islam_himel?igsh=NWY4cXJrZW5mdzdq&utm_source=qr"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.facebook.com/share/16Hgy72U58/?mibextid=wwXIfr"><i
+								class="fa fa-facebook"></i></a>
+						<a href="https://www.instagram.com/ridwanul_islam_himel?igsh=NWY4cXJrZW5mdzdq&utm_source=qr"><i
+								class="fa fa-instagram"></i></a>
 						<a href="https://wa.me/8801752753320"><i class="fa fa-whatsapp"></i></a>
 					</div>
 				</div>
@@ -121,12 +123,14 @@
 					<img src="https://drive.google.com/thumbnail?id=1gL8K1-_VBF05jqLu1rdlCB67LerNmo5o&sz=w400">
 					<div class="details">
 						<span><i class="fa fa-home"></i> Rajshahi</span>
-						<span><i class="fa fa-school"></i> Shaheed Colonel Kazi Emdadul Hque Public school, BGB , Rajshahi </span>
+						<span><i class="fa fa-school"></i> Shaheed Colonel Kazi Emdadul Hque Public school, BGB ,
+							Rajshahi </span>
 						<span><i class="fa fa-building-columns"></i> New Government Degree College, Rajshahi </span>
 					</div>
 					<div class="social-icons">
 						<a href="https://www.facebook.com/share/1NsBcpzuz1/"><i class="fa fa-facebook"></i></a>
-						<a href="https://www.instagram.com/anti_clock_7?igsh=dXVsdmlmbTR4cXlj"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.instagram.com/anti_clock_7?igsh=dXVsdmlmbTR4cXlj"><i
+								class="fa fa-instagram"></i></a>
 						<a href="https://wa.me/8801794279722"><i class="fa fa-whatsapp"></i></a>
 					</div>
 				</div>
@@ -171,6 +175,19 @@
 				const card = document.createElement("div");
 				card.className = "flip-container";
 
+				const facebook = student.Facebook
+					? `<a href="${student.Facebook}" target="_blank"><i class="fa fa-facebook"></i></a>`
+					: `<span class="disabled-link"><i class="fa fa-facebook"></i></span>`;
+
+				const instagram = student.Instagram
+					? `<a href="${student.Instagram}" target="_blank"><i class="fa fa-instagram"></i></a>`
+					: `<span class="disabled-link"><i class="fa fa-instagram"></i></span>`;
+
+				const whatsapp = student.WhatsApp
+					? `<a href="https://wa.me/880${student.WhatsApp}" target="_blank"><i class="fa fa-whatsapp"></i></a>`
+					: `<span class="disabled-link"><i class="fa fa-whatsapp"></i></span>`;
+
+
 				card.innerHTML = `
 					<div class="flip-inner-container">
 						<div class="flip-front">
@@ -186,9 +203,9 @@
 								<span><i class="fa fa-building-columns"></i> ${student.College}</span>
 							</div>
 							<div class="social-icons">
-								<a href="${student.Facebook}" target="_blank"><i class="fa fa-facebook"></i></a>
-								<a href="${student.Instagram}" target="_blank"><i class="fa fa-instagram"></i></a>
-								<a href="https://wa.me/880${student.WhatsApp}" target="_blank"><i class="fa fa-whatsapp"></i></a>
+								${facebook}
+								${instagram}
+								${whatsapp}
 							</div>
 						</div>
 					</div>

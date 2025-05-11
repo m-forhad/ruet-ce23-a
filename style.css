@@ -461,6 +461,18 @@ a {
   background: var(--text-color);
 }
 
+.flip-back .social-icons .disabled-link {
+  margin-right: 10px;
+  color: var(--text-color);
+  font-size: 2rem;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--btn-color);
+  opacity: 0.4;
+}
+
 .footer {
   position: relative;
   width: 100%;

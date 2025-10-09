@@ -328,12 +328,12 @@ a {
 
 #search {
   color: var(--text-color);
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
+  border: 3px solid var(--border-color);
+  border-radius: 30px;
   display: block;
-  padding: 9px 4px 9px 40px;
-  background: transparent url("/assets/search.svg") no-repeat 9px;
-  background-size: 20px;
+  font-size: 1rem;
+  padding: 12px 6px 12px 40px;
+  background: url(/assets/search.svg) 10px center / 24px no-repeat transparent;
   width: 90%;
   max-width: 500px;
   margin: 20px;
@@ -770,3 +770,4 @@ button {
 button {
   text-align: center;
 }
+
